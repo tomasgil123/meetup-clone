@@ -1,9 +1,7 @@
-import React, { ReactElement } from "react"
+import React, { ReactElement } from 'react'
 
-export default (): ReactElement => {
-  return (
-    <div>
-        Home
-    </div>
-  )
+const Home = (): ReactElement => {
+  return <div>Home</div>
 }
+
+export default Home

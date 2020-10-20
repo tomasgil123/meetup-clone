@@ -22,7 +22,15 @@ module.exports = {
   ],
   rules: {
     'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }],
-    '@typescript-eslint/explicit-function-return-type': 'on',
     'react/prop-types': 'off', // We turn off prop-types rule, as we will use TypeScript's types instead.
   },
+  overrides: [
+    {
+      // enable the rule specifically for TypeScript files
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': ['error'],
+      },
+    },
+  ],
 }

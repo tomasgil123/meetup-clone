@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 
-const Home = (): ReactElement => {
+const Home = (): JSX.Element => {
   return <div>Home</div>
 }
 

@@ -3,6 +3,7 @@ const colors = {
     white: '#ffffff',
     balck: '#000000',
     borders: '#ebeff3',
+    background: '#f9f9f9',
     primaryOrange: '#d1410c',
     secondaryOrange: '#f05537',
     primaryBlue: '#5465e4',

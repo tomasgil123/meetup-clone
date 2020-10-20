@@ -1,10 +1,12 @@
 const colors = {
   base: {
     white: '#ffffff',
+    balck: '#000000',
     borders: '#ebeff3',
-    primaryGreen: '#2a5913',
-    secondaryGreen: '#ADE8C4',
-    secondaryBlue: '#47657f',
+    primaryOrange: '#d1410c',
+    secondaryOrange: '#f05537',
+    primaryBlue: '#5465e4',
+    purple: '#1e0a3c',
   },
   text: {
     error: '#DF744A',

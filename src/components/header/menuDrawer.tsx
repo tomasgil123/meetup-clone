@@ -63,10 +63,7 @@ const ContainerLogo = styled.div`
 `
 
 const Logo = styled.div`
-  img {
-    height: auto;
-    width: ${space.s48};
-  }
+  color: ${colors.base.primaryOrange};
 `
 
 interface GrayOverlayProps {
@@ -106,9 +103,7 @@ function MenuDrawer({ translate, isUserLoggedIn }: MenuDrawerProps): JSX.Element
   return (
     <ContainerMenuDrawer translateMenu={translate}>
       <ContainerLogo>
-        <Logo>
-          <img src={require(`images/checamp_logo_horizontal.png`)} alt="checamp-logo" />
-        </Logo>
+        <Logo>Eventander</Logo>
       </ContainerLogo>
       <ContainerNavigation>
         <div style={{ position: 'relative' }}>{navigationOptions}</div>

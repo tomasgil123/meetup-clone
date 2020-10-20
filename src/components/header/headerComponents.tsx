@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 import { space, breakpoints, boxShadow, colors } from 'src/tokens'
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   position: sticky;
   top: 0px;
   left: 0px;
@@ -51,8 +51,10 @@ const Logo = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-size: ${space.s6};
   color: ${colors.base.primaryOrange};
   @media (min-width: ${breakpoints.md}) {
+    font-size: ${space.s8};
     flex: 1;
     justify-content: flex-start;
     max-width: 300px;

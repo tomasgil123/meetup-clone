@@ -19,13 +19,13 @@ const Container = styled.div`
 `
 
 const Brand = styled.div`
-  color: ${colors.base.purple};
+  color: ${colors.base.white};
 `
 
 const Footer: React.FC = () => {
   return (
     <Container>
-      <Brand>© TomasGil 2020</Brand>
+      <Brand>© Eventander 2020</Brand>
     </Container>
   )
 }

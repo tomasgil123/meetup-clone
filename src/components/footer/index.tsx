@@ -4,6 +4,10 @@ import { space, breakpoints, colors } from 'src/tokens'
 
 const Container = styled.div`
   display: flex;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
   flex-direction: column-reverse;
   background-color: ${colors.base.purple};
   border-top: 1px solid ${colors.base.borders};

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { space, breakpoints, boxShadow, colors } from 'src/tokens'
 
 const HeaderWrapper = styled.header`
-  position: sticky;
+  position: inherit;
   top: 0px;
   left: 0px;
   background-color: ${colors.base.white};

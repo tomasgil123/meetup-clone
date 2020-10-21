@@ -1,12 +1,19 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import 'src/styles/globals.css'
+import PageWithLayoutType from 'src/types/pageWithLayout'
+import React from 'react'
 
-import Layout from 'src/layout/main'
+type AppLayoutProps = {
+  Component: PageWithLayoutType
+  pageProps: any
+}
 
-import type { AppProps } from 'next/app'
+//our page components have a layout property
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+function MyApp({ Component, pageProps }: AppLayoutProps): JSX.Element {
+  const Layout = Component.layout ? Component.layout : React.Fragment
+
   return (
     <Layout>
       <Component {...pageProps} />

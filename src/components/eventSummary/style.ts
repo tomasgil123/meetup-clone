@@ -7,6 +7,7 @@ const Container = styled.div`
   border-top: 1px solid ${colors.base.borders};
   flex-direction: column;
   max-width: 700px;
+  margin: ${space.s5} auto;
   cursor: pointer;
   border-radius: ${space.s1};
   max-height: ${space.s56};

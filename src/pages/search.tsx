@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import Events from 'src/domain/search/events'
+import SearchLayout from 'src/layout/search'
 
-const Search = (): JSX.Element => {
+//types
+import PageWithLayout from 'src/types/pageWithLayout'
+
+const Search: FC = () => {
   return (
     <div>
-      Search
       <Events />
     </div>
   )
 }
+
+;(Search as PageWithLayout).layout = SearchLayout
 
 export default Search

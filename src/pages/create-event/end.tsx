@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 
-import CreateEventLayout from 'src/layout/createEvent'
+import EndComponent from 'src/domain/create-event/end'
+
+import CreateEventLayout from 'src/layout/createEvent/layout.container'
 
 //types
 import PageWithLayout from 'src/types/pageWithLayout'
 
 const End: FC = () => {
-  return <div>End</div>
+  return <EndComponent />
 }
 
 ;(End as PageWithLayout).layout = CreateEventLayout

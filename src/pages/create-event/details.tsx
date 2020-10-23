@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 
-import CreateEventLayout from 'src/layout/createEvent'
+import DetailsComponent from 'src/domain/create-event/details'
+
+import CreateEventLayout from 'src/layout/createEvent/layout.container'
 
 //types
 import PageWithLayout from 'src/types/pageWithLayout'
 
 const Details: FC = () => {
-  return <div>Details</div>
+  return <DetailsComponent />
 }
 
 ;(Details as PageWithLayout).layout = CreateEventLayout

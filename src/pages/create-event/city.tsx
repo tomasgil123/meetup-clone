@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 
-import CreateEventLayout from 'src/layout/createEvent'
+import CityComponent from 'src/domain/create-event/city'
+
+import CreateEventLayout from 'src/layout/createEvent/layout.container'
 
 //types
 import PageWithLayout from 'src/types/pageWithLayout'
 
 const City: FC = () => {
-  return <div>City</div>
+  return <CityComponent />
 }
 
 ;(City as PageWithLayout).layout = CreateEventLayout

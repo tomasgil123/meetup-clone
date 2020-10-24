@@ -16,6 +16,10 @@ interface Props {
 }
 
 const Home: FC<Props> = ({ translations, langCodes, lang }) => {
+  //MainLayout is not a page component so it does not have static props, but it needs info which can only
+  //be got that way (the different languages available)
+  //we had to come with a way to send props from children to parent
+
   const { setPossibleLangs } = useContext(PossibleLangsContext)
   useEffect(() => {
     setPossibleLangs(langCodes)

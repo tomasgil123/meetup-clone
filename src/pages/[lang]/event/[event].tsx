@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { getLanguageCodes, getLanguageByCode } from 'src/internationalization'
 
 //types
 import { EventDetails } from 'src/types/events'
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const Event: FC<Props> = ({ event }) => {
+  console.log('event', event)
   return (
     <div>
       Event
@@ -35,13 +37,26 @@ export async function getStaticProps({ params }: Params): Promise<unknown> {
 }
 
 export async function getStaticPaths(): Promise<unknown> {
+  const codes = getLanguageCodes()
   const events = [{ event: '1a' }, { event: '2a' }]
 
+  const eventsWithCodes = []
+
+  for (let i = 0; i < codes.length; i++) {
+    for (let j = 0; j < events.length; j++) {
+      const eventWithCode = {}
+      eventWithCode['event'] = events[j].event
+      eventWithCode['lang'] = codes[i]
+      eventsWithCodes.push(eventWithCode)
+    }
+  }
+
   return {
-    paths: events.map((event) => {
+    paths: eventsWithCodes.map((event) => {
       return {
         params: {
           event: event.event,
+          lang: event.lang,
         },
       }
     }),

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { PossibleLangsContext } from 'src/context'
 
 import Header from 'src/components/header'
 import Footer from 'src/components/footer'
@@ -9,11 +10,17 @@ type LayoutProps = {
 }
 
 const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
+  const [possibleLangs, setPossibleLangs] = useState([])
   return (
     <>
       <Header />
-      {children}
+      <PossibleLangsContext.Provider value={{ setPossibleLangs: setPossibleLangs }}>
+        {children}
+      </PossibleLangsContext.Provider>
       <WrapperFooter>
+        {possibleLangs.map((lang) => (
+          <div key={lang}>{lang}</div>
+        ))}
         <Footer />
       </WrapperFooter>
     </>

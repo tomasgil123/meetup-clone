@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { createContext } from 'react'
+import React, { createContext } from 'react'
 
 interface Action {
   type: string
@@ -24,3 +24,9 @@ const navigation = {
 }
 
 export const PageNavigationContext = createContext(navigation)
+
+const langs = {
+  setPossibleLangs: (langs: string[]): void => {},
+}
+
+export const PossibleLangsContext = createContext(langs)

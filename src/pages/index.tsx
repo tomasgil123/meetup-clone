@@ -1,19 +1,16 @@
-import React, { FC } from 'react'
+import React from 'react'
+import Head from 'next/head'
+//import { getInitialLocale } from '../translations/getInitialLocale'
 
-import Landing from 'src/domain/home/landing'
-import MainLayout from 'src/layout/main'
-
-//types
-import PageWithLayout from 'src/types/pageWithLayout'
-
-const Home: FC = () => {
+const Index: React.FC = () => {
+  React.useEffect(() => {
+    window.location.replace(`/en`)
+  })
   return (
-    <div>
-      <Landing />
-    </div>
+    <Head>
+      <meta name="robots" content="noindex, nofollow" />
+    </Head>
   )
 }
 
-;(Home as PageWithLayout).layout = MainLayout
-
-export default Home
+export default Index

@@ -1,7 +1,9 @@
 {
-	"en":{
-		"home":{
-			"title": "This is the title of home"
-		}
-	}
+  "en": {
+    "home": {
+      "title": "Find Santander related events near you",
+      "subtitle": "Awesome events about the technology stack used in the bank",
+      "button": "See events"
+    }
+  }
 }

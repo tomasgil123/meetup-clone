@@ -1,19 +1,35 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import MainButton from 'src/components/button'
 import { Container, Title, Subtitle, ContainerButton } from './styleLanding'
 
-const Landing = (): JSX.Element => {
+//types
+import { Home } from 'src/types/screens'
+
+interface Props {
+  translations: Home
+  lang: string
+}
+
+const Landing = ({ lang, translations }: Props): JSX.Element => {
+  const router = useRouter()
+
+  const goToSearch = (): void => {
+    router.push({
+      pathname: `${lang}/search`,
+    })
+  }
   return (
     <Container>
-      <Title>Busca eventos</Title>
-      <Subtitle>Accede en un click a todos los eventos de tu ciudad</Subtitle>
+      <Title>{translations.title}</Title>
+      <Subtitle>{translations.subtitle}</Subtitle>
       <ContainerButton>
         <MainButton
           typeButton={'button'}
-          text={'Ver eventos'}
+          text={translations.button}
           secondary={false}
-          onClickButton={undefined}
+          onClickButton={goToSearch}
         />
       </ContainerButton>
     </Container>

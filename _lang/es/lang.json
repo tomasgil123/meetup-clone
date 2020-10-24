@@ -1,7 +1,9 @@
 {
-	"es":{
-		"home":{
-			"title": "Este es el titulo de la home"
-		}	
-	}
+  "es": {
+    "home": {
+      "title": "Eventos relacionados con el santander",
+      "subtitle": "Eventos re piolas sobre el stack tecnologico que se usa en el banco",
+      "button": "Ver eventos"
+    }
+  }
 }

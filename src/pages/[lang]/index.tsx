@@ -7,20 +7,22 @@ import MainLayout from 'src/layout/main'
 
 //types
 import PageWithLayout from 'src/types/pageWithLayout'
+import { Home } from 'src/types/screens'
 
 interface Props {
-  translations: unknown
+  translations: Home
   langCodes: string[]
+  lang: string
 }
 
-const Home: FC<Props> = ({ translations, langCodes }) => {
+const Home: FC<Props> = ({ translations, langCodes, lang }) => {
   const { setPossibleLangs } = useContext(PossibleLangsContext)
   useEffect(() => {
     setPossibleLangs(langCodes)
   }, [])
   return (
     <div>
-      <Landing />
+      <Landing lang={lang} translations={translations} />
     </div>
   )
 }
@@ -45,6 +47,7 @@ export async function getStaticProps({ params }: Params): Promise<unknown> {
         ...translations,
       },
       langCodes: [...codes],
+      lang: params.lang,
     },
   }
 }

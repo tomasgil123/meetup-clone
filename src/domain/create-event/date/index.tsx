@@ -12,6 +12,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 const DateComponent = (): JSX.Element => {
   const [dateEvent, setDateEvent] = useState('')
+  //console.log('dateEvent', dateEvent.toLocaleDateString())
   const yesterday = new Date()
 
   const [exit, errorMessage, onValidateInput] = useHandleInputValidationCreateEvent({

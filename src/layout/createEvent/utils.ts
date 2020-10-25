@@ -13,7 +13,7 @@ const getProgress = ({ stepsForm, currentStepUrl }: Progress): number => {
 }
 
 const getNextStep = ({ stepsForm, currentStepUrl }: Progress): string => {
-  const currentStep = stepsForm.find((step) => currentStepUrl === step.path)
+  const currentStep = stepsForm.find((step) => currentStepUrl.includes(step.path))
   return stepsForm.find((step) => step.stepNumber === currentStep.stepNumber + 1).url
 }
 

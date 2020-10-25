@@ -4,6 +4,11 @@
       "title": "Find Santander related events near you",
       "subtitle": "Awesome events about the technology stack used in the bank",
       "button": "See events"
+    },
+    "event": {
+        "participants": "Number participants: ",
+        "expectedTemperature": "Expected temperature: ",
+        "date": "Date: "
     }
   }
 }

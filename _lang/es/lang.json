@@ -4,6 +4,11 @@
       "title": "Eventos relacionados con el santander",
       "subtitle": "Eventos re piolas sobre el stack tecnologico que se usa en el banco",
       "button": "Ver eventos"
+	},
+	"event": {
+		"participants": "Numero de participantes: ",
+		"expectedTemperature": "Temperatura esperada: ",
+        "date": "Fecha: "
     }
   }
 }

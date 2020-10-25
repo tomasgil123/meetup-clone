@@ -7,10 +7,10 @@ import MainLayout from 'src/layout/main'
 
 //types
 import PageWithLayout from 'src/types/pageWithLayout'
-import { Home } from 'src/types/screens'
+import { HomeLang } from 'src/types/screens'
 
 interface Props {
-  translations: Home
+  translations: HomeLang
   langCodes: string[]
   lang: string
 }
@@ -42,7 +42,7 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params): Promise<unknown> {
-  const translations = getLanguageByCode(params.lang)
+  const translations = getLanguageByCode(params.lang).home
   const codes = getLanguageCodes()
 
   return {

@@ -5,10 +5,10 @@ import MainButton from 'src/components/button'
 import { Container, Title, Subtitle, ContainerButton } from './styleLanding'
 
 //types
-import { Home } from 'src/types/screens'
+import { HomeLang } from 'src/types/screens'
 
 interface Props {
-  translations: Home
+  translations: HomeLang
   lang: string
 }
 

@@ -13,12 +13,9 @@ export default async (req, res) => {
   const dateEvent = req.query.dateEvent
 
   let result
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.OPEN_WEATHER_KEY}&units=metric`
   try {
-    result = await (
-      await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.OPEN_WEATHER_KEY}&units=metric`
-      )
-    ).json()
+    result = await (await fetch(url)).json()
   } catch (err) {
     res.statusCode = 400
     result = { err: err }

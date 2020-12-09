@@ -91,13 +91,21 @@ const Option = styled.li`
 interface MenuDrawerProps {
   isUserLoggedIn: boolean
   translate: string
+  handleLoginSignup: ():void=>{}
+  
 }
 
 function MenuDrawer({ translate, isUserLoggedIn }: MenuDrawerProps): JSX.Element {
   const navigationOptions = isUserLoggedIn ? (
-    <ImportantOption>Ingresar/Registrarse</ImportantOption>
+    <>
+      <ImportantOption>My profile</ImportantOption>
+      <Option>Logout</Option>
+    </>
   ) : (
-    <Option>Salir</Option>
+    <>
+      <ImportantOption>Login</ImportantOption>
+      <Option>Sign up</Option>
+    </>
   )
 
   return (

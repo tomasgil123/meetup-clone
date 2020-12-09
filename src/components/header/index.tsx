@@ -13,10 +13,15 @@ import {
   TabImportant,
 } from './headerComponents'
 import { MenuDrawer, GrayOverlay } from './menuDrawer'
+import Loader from 'src/components/loader'
 
-function Header(): JSX.Element {
+interface Props {
+  isUserLoggedIn: boolean
+  isUserLoading: boolean
+}
+
+function Header({ isUserLoggedIn, isUserLoading }: Props): JSX.Element {
   const [showMenuDrawer, setShowMenuDrawer] = useState('-500%')
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
   const router = useRouter()
 
   const onOpenMenuDrawer = (): void => {
@@ -33,10 +38,35 @@ function Header(): JSX.Element {
     })
   }
 
+  //Como hacemos para agregar el lang?
+
+  const handleLoginSignup = async (typeAction: string): Promise<void> => {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/login?typeAction=${typeAction}`)
+  }
+
+  const handleLogout = async (): Promise<void> => {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/logout`)
+  }
+
+  const onGoToProfile = (): void => {
+    router.push({
+      pathname: '/en/my-profile/events',
+    })
+  }
+
+  //for the time being the text of this buttons will be hardcoded
+  //since passing the translations from every page to the layout implies too much work
+
   const TabsHeader = isUserLoggedIn ? (
-    <TabImportant>Ingresar/Registrarse</TabImportant>
+    <>
+      <TabImportant onClick={onGoToProfile}>My profile</TabImportant>
+      <Tab onClick={handleLogout}>Logout</Tab>
+    </>
   ) : (
-    <Tab>Salir</Tab>
+    <>
+      <TabImportant onClick={(): Promise<void> => handleLoginSignup('login')}>Login</TabImportant>
+      <Tab onClick={(): Promise<void> => handleLoginSignup('signup')}>Sign Up</Tab>
+    </>
   )
 
   return (
@@ -55,7 +85,9 @@ function Header(): JSX.Element {
         </MenuLeft>
         <Logo onClick={onGoHome}>Eventander</Logo>
         <MenuRight />
-        <ContainerTabs>{TabsHeader}</ContainerTabs>
+        <ContainerTabs>
+          {isUserLoading ? <Loader secondary={true} /> : <>{TabsHeader}</>}
+        </ContainerTabs>
       </Container>
     </HeaderWrapper>
   )

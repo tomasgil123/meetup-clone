@@ -110,6 +110,7 @@ const Tab = styled.div`
 
 const TabImportant = styled.div`
   display: none;
+  cursor: pointer;
   color: ${colors.base.white};
   @media (min-width: ${breakpoints.md}) {
     display: inherit !important;

@@ -5,6 +5,7 @@ const Container = styled.div`
   max-width: 600px;
   margin: auto;
   text-align: center;
+  padding: ${space.s4};
 `
 
 const Title = styled.div`

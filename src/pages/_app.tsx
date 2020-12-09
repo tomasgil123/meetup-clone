@@ -9,8 +9,6 @@ type AppLayoutProps = {
   pageProps: any
 }
 
-//our page components have a layout property
-
 function MyApp({ Component, pageProps }: AppLayoutProps): JSX.Element {
   const Layout = Component.layout ? Component.layout : React.Fragment
 
